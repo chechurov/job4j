@@ -11,14 +11,14 @@ public class MultiMax {
      */
     public int max(int first, int second, int third) {
         // Первый вариант.
-        /*int result = first > second ? first : second;
-        return result > third ? result : third;*/
+        int result = first > second ? first : second;
+        return result > third ? result : third;
 
         //Второй вариант.
-        return first > second
+        /*return first > second
                             ? first > third
                                             ? first : third
                             : second > third
-                                            ? second : third;
+                                            ? second : third;*/
     }
 }
