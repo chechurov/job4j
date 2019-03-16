@@ -7,11 +7,10 @@ public class BubbleSort {
      * @return отсортированный массив по возрастанию.
      */
     public int[] sort(int[] array) {
-        int temp;
         for (int i = array.length - 1; i != 0; i--) {
             for (int k = 0; k <= i - 1; k++) {
                 if (array[k] > array [k + 1]) {
-                    temp = array[k];
+                    int temp = array[k];
                     array[k] = array[k + 1];
                     array[k + 1] = temp;
                 }
