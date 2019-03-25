@@ -7,17 +7,35 @@ public class ArrayInt {
      * @param array2 второй массив.
      * @return результирущий массив.
      */
+    /*public int[] addTwoArrays(int[] array1, int[] array2) {
+        int[] result = new int[array1.length + array2.length];
+        for (int i = 0; i != array1.length; i++) {
+            result[i] = array1[i];
+        }
+        for (int i = 0; i != array2.length; i++) {
+            result[array1.length + i] = array2[i];
+        }
+        BubbleSort sort = new BubbleSort();
+        return sort.sort(result);
+    }*/
+
+    //Второй вариант.
     public int[] addTwoArrays(int[] array1, int[] array2) {
-        int[] resultArray = new int[array1.length + array2.length];
-        for (int i = 0, j = 0; i != array1.length; i++, j += 2) {
-            if (array1[i] >= array2[i]) {
-                resultArray[j] = array2[i];
-                resultArray[j + 1] = array1[i];
+        int[] result = new int[array1.length + array2.length];
+        int i = 0, j = 0, index = 0;
+        while (i < array1.length && j < array2.length) {
+            if (array1[i] < array2[j]) {
+                result[index++] = array1[i++];
             } else {
-                resultArray[j + 1] = array2[i];
-                resultArray[j] = array1[i];
+                result[index++] = array2[j++];
             }
         }
-        return resultArray;
+        while (i < array1.length) {
+            result[index++] = array1[i++];
+        }
+        while (j < array2.length) {
+            result[index++] = array2[j++];
+        }
+        return result;
     }
 }
