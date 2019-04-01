@@ -76,7 +76,7 @@ public class Tracker {
      * @return массив с заявками. Если заявок нет, то null.
      */
     public Item[] findAll() {
-        return this.position == 0 ? null : Arrays.copyOf(this.items, this.position);
+        return Arrays.copyOf(this.items, this.position);
     }
 
     /**
@@ -92,7 +92,7 @@ public class Tracker {
                 result[count++] = this.items[i];
             }
         }
-        return count == 0 ? null : Arrays.copyOf(result, count);
+        return Arrays.copyOf(result, count);
     }
 
     private int findPosById(String id) {

@@ -7,19 +7,6 @@ public class ArrayInt {
      * @param array2 второй массив.
      * @return результирущий массив.
      */
-    /*public int[] addTwoArrays(int[] array1, int[] array2) {
-        int[] result = new int[array1.length + array2.length];
-        for (int i = 0; i != array1.length; i++) {
-            result[i] = array1[i];
-        }
-        for (int i = 0; i != array2.length; i++) {
-            result[array1.length + i] = array2[i];
-        }
-        BubbleSort sort = new BubbleSort();
-        return sort.sort(result);
-    }*/
-
-    //Второй вариант.
     public int[] addTwoArrays(int[] array1, int[] array2) {
         int[] result = new int[array1.length + array2.length];
         int i = 0, j = 0, index = 0;

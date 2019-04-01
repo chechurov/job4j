@@ -2,7 +2,6 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class TrackerTest {
@@ -99,7 +98,7 @@ public class TrackerTest {
      * Тест поиск по имени заявки(заявки не найдены).
      */
     @Test
-    public void whenFindByNameThenNull() {
+    public void whenFindByNameThenEmptyArray() {
         Tracker tracker = new Tracker();
         Item item1 = new Item("test2", "testDescription1", 123L);
         Item item2 = new Item("test2", "testDescription2", 1234L);
@@ -108,6 +107,7 @@ public class TrackerTest {
         tracker.add(item2);
         tracker.add(item3);
         Item[] result = tracker.findByName("test1");
-        assertThat(result, is(nullValue()));
+        Item[] expected = new Item[0];
+        assertThat(result, is(expected));
     }
 }
