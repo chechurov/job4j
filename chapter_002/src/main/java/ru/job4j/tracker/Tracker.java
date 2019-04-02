@@ -73,7 +73,7 @@ public class Tracker {
 
     /**
      * Метод возвращает все заявки, кроме пустых.
-     * @return массив с заявками. Если заявок нет, то null.
+     * @return массив с заявками. Если заявок нет, то пустой массив.
      */
     public Item[] findAll() {
         return Arrays.copyOf(this.items, this.position);
@@ -82,7 +82,7 @@ public class Tracker {
     /**
      * Возвращает все заявки с заданным именем.
      * @param key заданное имя для поиска.
-     * @return массив с заявками. Если заявки не найдено, то null.
+     * @return массив с заявками. Если заявки не найдены, то пустой массив.
      */
     public Item[] findByName(String key) {
         Item[] result = new Item[this.position];
